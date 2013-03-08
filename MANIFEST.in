@@ -1,0 +1,4 @@
+include LICENSE
+include README.md
+recursive-include cmsplugin_hoverimage/migrations *
+graft cmsplugin_hoverimage/templates

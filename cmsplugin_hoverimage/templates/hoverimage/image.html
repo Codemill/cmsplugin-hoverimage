@@ -1,0 +1,14 @@
+{% load sekizai_tags %}
+{% addtoblock "css" %}
+    <style>
+        .cmsplugin_hoverimage .cmsplugin_hoverimage_hover { display: none; }
+        .cmsplugin_hoverimage:hover .cmsplugin_hoverimage_image { display: none; }
+        .cmsplugin_hoverimage:hover .cmsplugin_hoverimage_hover { display: inline; }
+    </style>
+{% endaddtoblock %}
+<span class="cmsplugin_hoverimage">
+{% if link %}<a href="{{ link }}">{% endif %}
+<img src="{{ picture.image.url }}" alt="{{ picture.alt }}"{% if picture.longdesc %} title="{{ picture.longdesc }}"{% endif %} class="cmsplugin_hoverimage_image" />
+<img src="{{ picture.hover.url }}" alt="{{ picture.alt }}"{% if picture.longdesc %} title="{{ picture.longdesc }}"{% endif %} class="cmsplugin_hoverimage_hover" />
+{% if link %}</a>{% endif %}
+</span>
